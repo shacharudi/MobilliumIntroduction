@@ -210,7 +210,7 @@ extension IntroductionConfig {
         /// Button title color, default `UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0)`
         let titleColor: UIColor
         
-        let additionlStyle: AdditionalStyle?
+        let additionalStyle: AdditionalStyle?
         
         public init(title: String = "Skip",
                     attributedTitle: NSAttributedString? = nil,
@@ -225,7 +225,7 @@ extension IntroductionConfig {
             self.isSkipButtonHiddenWhenLastContentShown = isSkipButtonHiddenWhenLastContentShown
             self.font = font
             self.titleColor = titleColor
-            self.additionlStyle = additionlStyle
+            self.additionalStyle = additionlStyle
         }
     }
 }

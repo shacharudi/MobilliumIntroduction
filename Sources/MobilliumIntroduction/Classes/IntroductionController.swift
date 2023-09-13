@@ -174,11 +174,13 @@ extension IntroductionController {
         
         skipButton.isHidden = config.skipButton.isHidden
         
-        if let additionalStyle = config.skipButton.additionlStyle {
+        if let additionalStyle = config.skipButton.additionalStyle {
             skipButton.backgroundColor = additionalStyle.backgroundColor
             skipButton.layer.cornerRadius = additionalStyle.borderRadius
             skipButton.layer.borderColor = additionalStyle.borderColor.cgColor
             skipButton.layer.borderWidth = additionalStyle.borderWidth
+            
+            skipButton.sizeToFit()
         }
     }
     
