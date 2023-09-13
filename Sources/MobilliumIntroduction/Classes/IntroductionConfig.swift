@@ -177,6 +177,13 @@ extension IntroductionConfig {
         let borderRadius: CGFloat
         let borderColor: UIColor
         let borderWidth: CGFloat
+        
+        public init(backgroundColor: UIColor, borderRadius: CGFloat, borderColor: UIColor, borderWidth: CGFloat) {
+            self.backgroundColor = backgroundColor
+            self.borderRadius = borderRadius
+            self.borderColor = borderColor
+            self.borderWidth = borderWidth
+        }
     }
 }
 
