@@ -174,6 +174,12 @@ extension IntroductionConfig {
 // MARK: - IntroductionSkipButton
 extension IntroductionConfig {
     
+    public struct AdditionalStyle {
+        let backgroundColor: UIColor
+        let borderRadius: CGFloat
+        let borderColor: UIColor
+    }
+    
     public struct SkipButton {
         
         /// Button title, default `Skip`
@@ -194,18 +200,22 @@ extension IntroductionConfig {
         /// Button title color, default `UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0)`
         let titleColor: UIColor
         
+        let additionlStyle: AdditionalStyle?
+        
         public init(title: String = "Skip",
                     attributedTitle: NSAttributedString? = nil,
                     isHidden: Bool = false,
                     isSkipButtonHiddenWhenLastContentShown: Bool = true,
                     font: UIFont = .systemFont(ofSize: 13.0, weight: .medium),
-                    titleColor: UIColor = UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0)) {
+                    titleColor: UIColor = UIColor(red: 108.0 / 255.0, green: 107.0 / 255.0, blue: 125.0 / 255.0, alpha: 1.0),
+                    additionlStyle: AdditionalStyle? = nil) {
             self.title = title
             self.attributedTitle = attributedTitle
             self.isHidden = isHidden
             self.isSkipButtonHiddenWhenLastContentShown = isSkipButtonHiddenWhenLastContentShown
             self.font = font
             self.titleColor = titleColor
+            self.additionlStyle = additionlStyle
         }
     }
 }
