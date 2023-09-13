@@ -171,17 +171,19 @@ extension IntroductionConfig {
     }
 }
 
+extension IntroductionConfig {
+    public struct AdditionalStyle {
+        let backgroundColor: UIColor
+        let borderRadius: CGFloat
+        let borderColor: UIColor
+        let borderWidth: CGFloat
+    }
+}
+
 // MARK: - IntroductionSkipButton
 extension IntroductionConfig {
         
     public struct SkipButton {
-        
-        public struct AdditionalStyle {
-            let backgroundColor: UIColor
-            let borderRadius: CGFloat
-            let borderColor: UIColor
-            let borderWidth: CGFloat
-        }
         
         /// Button title, default `Skip`
         let title: String
