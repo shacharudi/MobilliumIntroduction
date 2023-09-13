@@ -27,14 +27,28 @@ public class IntroductionController: UIViewController {
     
     public weak var delegate: IntroductionControllerDelegate?
     
+    private class AdaptableSizeButton: UIButton {
+        override var intrinsicContentSize: CGSize {
+            let labelSize = titleLabel?.sizeThatFits(
+                CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)
+            ) ?? .zero
+            let desiredButtonSize = CGSize(
+                width: labelSize.width + titleEdgeInsets.left + titleEdgeInsets.right,
+                height: labelSize.height + titleEdgeInsets.top + titleEdgeInsets.bottom
+            )
+            
+            return desiredButtonSize
+        }
+    }
+    
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         return pageControl
     }()
     
-    private let skipButton: UIButton = {
-        let button = UIButton()
+    private let skipButton: AdaptableSizeButton = {
+        let button = AdaptableSizeButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -179,8 +193,6 @@ extension IntroductionController {
             skipButton.layer.cornerRadius = additionalStyle.borderRadius
             skipButton.layer.borderColor = additionalStyle.borderColor.cgColor
             skipButton.layer.borderWidth = additionalStyle.borderWidth
-            
-            skipButton.sizeToFit()
         }
     }
     
