@@ -26,15 +26,25 @@ public extension IntroductionControllerDelegate {
 public class IntroductionController: UIViewController {
     
     public weak var delegate: IntroductionControllerDelegate?
+    
+    private class AutoSizeButton: UIButton {
         
+        let padding = CGSize(width: 32, height: 0)
+        
+        override var intrinsicContentSize: CGSize {
+            let size = super.intrinsicContentSize
+            return CGSize(width: size.width + padding.width, height: size.height + padding.height)
+        }
+    }
+    
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         return pageControl
     }()
     
-    private let skipButton: UIButton = {
-        let button = UIButton()
+    private let skipButton: AutoSizeButton = {
+        let button = AutoSizeButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -114,7 +124,7 @@ extension IntroductionController {
         NSLayoutConstraint.activate([
             skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             skipButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
-            skipButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)
+            skipButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
     
@@ -181,6 +191,11 @@ extension IntroductionController {
             skipButton.layer.borderColor = additionalStyle.borderColor.cgColor
             skipButton.layer.borderWidth = additionalStyle.borderWidth
         }
+        
+        skipButton.backgroundColor = .blue
+        skipButton.layer.cornerRadius = 23
+        skipButton.layer.borderColor = UIColor.yellow.cgColor
+        skipButton.layer.borderWidth = 2
     }
     
     private func configureNextButton() {
