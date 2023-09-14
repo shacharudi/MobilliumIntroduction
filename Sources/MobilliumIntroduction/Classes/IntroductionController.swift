@@ -133,10 +133,10 @@ extension IntroductionController {
         view.addSubview(nextButton)
         
         NSLayoutConstraint.activate([
-            nextButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50),
-            nextButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
-            nextButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            nextButton.heightAnchor.constraint(equalToConstant: 44)
+            nextButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -48),
+            nextButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            nextButton.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.45),
+            nextButton.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
     
@@ -145,7 +145,7 @@ extension IntroductionController {
         view.addSubview(pageControl)
         
         NSLayoutConstraint.activate([
-            pageControl.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -16),
+            pageControl.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -24),
             pageControl.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -32),
             pageControl.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 32)
         ])
