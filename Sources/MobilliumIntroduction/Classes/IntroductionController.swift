@@ -26,29 +26,15 @@ public extension IntroductionControllerDelegate {
 public class IntroductionController: UIViewController {
     
     public weak var delegate: IntroductionControllerDelegate?
-    
-    private class AdaptableSizeButton: UIButton {
-        override var intrinsicContentSize: CGSize {
-            let labelSize = titleLabel?.sizeThatFits(
-                CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)
-            ) ?? .zero
-            let desiredButtonSize = CGSize(
-                width: labelSize.width + titleEdgeInsets.left + titleEdgeInsets.right,
-                height: labelSize.height + titleEdgeInsets.top + titleEdgeInsets.bottom
-            )
-            
-            return desiredButtonSize
-        }
-    }
-    
+        
     private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         return pageControl
     }()
     
-    private let skipButton: AdaptableSizeButton = {
-        let button = AdaptableSizeButton()
+    private let skipButton: UIButton = {
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -127,7 +113,8 @@ extension IntroductionController {
         
         NSLayoutConstraint.activate([
             skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            skipButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16)
+            skipButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            skipButton.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor)
         ])
     }
     

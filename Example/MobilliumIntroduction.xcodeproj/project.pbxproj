@@ -209,10 +209,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6QX7E4FYPG;
 						LastSwiftMigration = 1330;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 6QX7E4FYPG;
 						LastSwiftMigration = 1330;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -472,6 +474,7 @@
 			baseConfigurationReference = 1FE467FEDD66DEC70E851D9D /* Pods-MobilliumIntroduction_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6QX7E4FYPG;
 				INFOPLIST_FILE = MobilliumIntroduction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -489,6 +492,7 @@
 			baseConfigurationReference = 5D580AEF1D30C08BF6A1C078 /* Pods-MobilliumIntroduction_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6QX7E4FYPG;
 				INFOPLIST_FILE = MobilliumIntroduction/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -505,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DCFA1A766EE98B6503000805 /* Pods-MobilliumIntroduction_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 6QX7E4FYPG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -527,6 +532,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EB86C9052DD93C04AB46344 /* Pods-MobilliumIntroduction_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 6QX7E4FYPG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PLATFORM_DIR)/Developer/Library/Frameworks",
 					"$(inherited)",
