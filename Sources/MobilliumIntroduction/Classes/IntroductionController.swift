@@ -122,8 +122,8 @@ extension IntroductionController {
         view.addSubview(skipButton)
         
         NSLayoutConstraint.activate([
-            skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
-            skipButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            skipButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 32),
+            skipButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
             skipButton.heightAnchor.constraint(equalToConstant: 44)
         ])
     }
@@ -157,10 +157,10 @@ extension IntroductionController {
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: skipButton.bottomAnchor, constant: 16),
-            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -16)
+            collectionView.topAnchor.constraint(equalTo: skipButton.bottomAnchor, constant: 32),
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
+            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -32)
         ])
     }
 }
