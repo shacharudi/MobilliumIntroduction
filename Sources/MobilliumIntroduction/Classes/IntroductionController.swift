@@ -191,11 +191,6 @@ extension IntroductionController {
             skipButton.layer.borderColor = additionalStyle.borderColor.cgColor
             skipButton.layer.borderWidth = additionalStyle.borderWidth
         }
-        
-        skipButton.backgroundColor = .blue
-        skipButton.layer.cornerRadius = 23
-        skipButton.layer.borderColor = UIColor.yellow.cgColor
-        skipButton.layer.borderWidth = 2
     }
     
     private func configureNextButton() {
