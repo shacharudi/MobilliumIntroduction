@@ -160,7 +160,7 @@ extension IntroductionController {
             collectionView.topAnchor.constraint(equalTo: skipButton.bottomAnchor, constant: 32),
             collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 32),
             collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -32),
-            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -32)
+            collectionView.bottomAnchor.constraint(equalTo: pageControl.topAnchor, constant: -2)
         ])
     }
 }
