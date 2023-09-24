@@ -24,8 +24,7 @@ class IntroductionCell: UICollectionViewCell {
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        let multiplier = (UserDeviceType.isIPad()) ? 0.75 : 1.25
-        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: multiplier).isActive = true
+        imageView.heightAnchor.constraint(lessThanOrEqualTo: imageView.widthAnchor, multiplier: 1.25).isActive = true
         return imageView
     }()
 
