@@ -11,15 +11,15 @@ import UIKit
 public protocol IntroductionControllerDelegate: AnyObject {
     func introductionController(_ controller: IntroductionController, willDisplay index: Int)
     func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int)
-    func didSkipButtonTapped()
-    func didNextButtonTappedAtEndOfContents()
+    func didSkipButtonTapped(_ controller: IntroductionController)
+    func didNextButtonTappedAtEndOfContents(_ controller: IntroductionController)
 }
 
 public extension IntroductionControllerDelegate {
     func introductionController(_ controller: IntroductionController, willDisplay index: Int) { }
     func introductionController(_ controller: IntroductionController, didEndDisplaying index: Int) { }
-    func didSkipButtonTapped() { }
-    func didNextButtonTappedAtEndOfContents() { }
+    func didSkipButtonTapped(_ controller: IntroductionController) { }
+    func didNextButtonTappedAtEndOfContents(_ controller: IntroductionController) { }
 }
 
 // MARK: - IntroductionController
@@ -90,9 +90,7 @@ public class IntroductionController: UIViewController {
     
     @objc
     private func skipButtonTapped(_ button: UIButton) {
-        dismiss(animated: true) {
-            self.delegate?.didSkipButtonTapped()
-        }
+        self.delegate?.didSkipButtonTapped(self)
     }
     
     @objc
@@ -100,9 +98,7 @@ public class IntroductionController: UIViewController {
         if pageControl.currentPage + 1 < config.contents.count {
             collectionView.scrollToItem(at: IndexPath(item: pageControl.currentPage + 1, section: 0), at: .centeredHorizontally, animated: true)
         } else {
-            dismiss(animated: true) {
-                self.delegate?.didNextButtonTappedAtEndOfContents()
-            }
+            self.delegate?.didNextButtonTappedAtEndOfContents(self)
         }
     }
 }
